@@ -13,7 +13,7 @@ jobs:
       - uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-region: 'ap-northeast-1' # リージョンを指定
-          role-to-assume: 'arn:aws:iam::654654329506:role/GitHubActionAssumeRoleWithAction' # 作成した IAM ロールの ARN
+          role-to-assume: 'arn:aws:iam::654654329506:role/AppDeployRole' # 作成した IAM ロールの ARN
 
       - name: CDKで作成したS3 バケットにタグを設定
         run: |	
