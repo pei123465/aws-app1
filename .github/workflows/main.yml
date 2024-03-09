@@ -18,7 +18,7 @@ jobs:
       - name: CDKで作成したS3 バケットにタグを設定
         run: |	
           echo "CDKでS3 バケット作成後にパラメータストアに登録したARNを取得"
-          echo "bucketArn=aws ssm get-parameter --query \"Parameter.Value\" --output text --name \"/TestS3/Arn\""
+          echo "aws ssm get-parameter --query \"Parameter.Value\" --output text --name \"/TestS3/Arn\""
           bucketArn=$(aws ssm get-parameter --query "Parameter.Value" --output text --name "/TestS3/Arn")
           echo "S3のARN：$bucketArn"
           echo "S3 バケットにタグを設定する"
